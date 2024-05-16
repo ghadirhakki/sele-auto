@@ -19,7 +19,7 @@ steps:
       RECORD_PID=$!
 
       # Run the Selenium test
-      python test_linkedin.py
+      python test-auto.py
 
       # Stop screen recording
       kill $RECORD_PID
