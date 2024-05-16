@@ -44,3 +44,18 @@ steps:
       ArtifactName: 'screenshots'
       publishLocation: 'Container'
     condition: succeededOrFailed()
+
+  - task: PublishBuildArtifacts@1
+    inputs:
+      PathtoPublish: 'enter_pwd_page.png'
+      ArtifactName: 'screenshots'
+      publishLocation: 'Container'
+    condition: succeededOrFailed()
+
+  - task: PublishBuildArtifacts@1
+    inputs:
+      PathtoPublish: 'signed_in_page.png'
+      ArtifactName: 'screenshots'
+      publishLocation: 'Container'
+    condition: succeededOrFailed()
+    
