@@ -82,6 +82,17 @@ try:
     time.sleep(10)
     driver.save_screenshot('signed_in_page.png')
     logger.info("signed in screenshot taken")
+
+
+    #pop up avant de continuer 
+    # Find and click "OK" button by class name
+    ok_button = driver.find_element(By.CLASS_NAME, "v-btn__content")
+    ok_button.click()
+    logger.info("Clicked on 'OK' button")
+
+    time.sleep(10)
+    driver.save_screenshot('pop_up_off.png')
+    logger.info("pop_up_off screenshot taken")
     
 
 except Exception as e:
