@@ -28,6 +28,11 @@ try:
 
     # Wait for a few seconds to allow page to load
     time.sleep(5)
+    
+    # Print and log the page title
+    page_title = driver.title
+    print("Page title:", page_title)
+    logger.info(f"Page title: {page_title}")
 
     # Verify page title
     #assert "Expleo" in driver.title
