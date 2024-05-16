@@ -59,6 +59,10 @@ try:
 
     driver.save_screenshot('next_button_clicked.png')
     logger.info("Next butotn clicked screenshot taken")
+
+    time.sleep(15)
+    driver.save_screenshot('next_button_clicked_page_shown.png')
+    logger.info("Next page of next button clicked screenshot taken ")
     
 
 except Exception as e:
