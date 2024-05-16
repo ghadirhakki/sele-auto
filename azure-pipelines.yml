@@ -14,7 +14,16 @@ steps:
       python -m venv venv
       source venv/bin/activate
       pip install -r requirements.txt
-      python test-auto.py
+      # Start screen recording
+      ffmpeg -video_size 1920x1080 -framerate 25 -f x11grab -i :0.0 -y test_execution.mp4 &
+      RECORD_PID=$!
+
+      # Run the Selenium test
+      python test_linkedin.py
+
+      # Stop screen recording
+      kill $RECORD_PID
+      
     displayName: 'Run Selenium Test'
 
   - task: PublishBuildArtifacts@1
