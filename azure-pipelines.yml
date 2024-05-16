@@ -18,7 +18,7 @@ steps:
   - script: |
       dir # not necessary, will print all directories available
       pwd # will show your current path, also good for debugging
-    displayName: 'Changing directory...'
+    displayName: 'Display current directory'
 
   - script: |
       python -m venv venv
