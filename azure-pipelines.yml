@@ -22,7 +22,10 @@ steps:
 
   - task: PublishBuildArtifacts@1
     inputs:
-      PathtoPublish: 'login_page.png'
+      PathtoPublish: |
+        login_page.png
+        enter_email_page.png
+        next_button_clicked.png
       ArtifactName: 'screenshots'
       publishLocation: 'Container'
     condition: succeededOrFailed()
