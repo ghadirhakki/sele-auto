@@ -42,6 +42,24 @@ try:
     driver.save_screenshot('login_page.png')
     logger.info("Full-screen screenshot taken")
 
+
+    # Find and fill email input field
+    email_input = driver.find_element_by_id("i0116")
+    email_input.send_keys("expleo.admin@suezenv.onmicrosoft.com")
+    logger.info("Entered email")
+
+    driver.save_screenshot('enter_email_page.png')
+    logger.info("entered email screenshot taken")
+
+    # Find and click "Next" button
+    next_button = driver.find_element_by_id("idSIButton9")
+    next_button.click()
+    logger.info("Clicked on 'Next' button")
+
+    driver.save_screenshot('next_button_clicked.png')
+    logger.info("Next butotn clicked screenshot taken")
+    
+
 except Exception as e:
     logger.error(f"An error occurred: {e}")
 
