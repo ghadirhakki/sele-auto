@@ -14,18 +14,26 @@ steps:
       python -m venv venv
       source venv/bin/activate
       pip install -r requirements.txt
-    
-      # Run the Selenium test
-      python test-auto.py
-      
+      python test_script.py
     displayName: 'Run Selenium Test'
 
   - task: PublishBuildArtifacts@1
     inputs:
-      PathtoPublish: |
-        login_page.png
-        enter_email_page.png
-        next_button_clicked.png
+      PathtoPublish: 'login_page.png'
+      ArtifactName: 'screenshots'
+      publishLocation: 'Container'
+    condition: succeededOrFailed()
+
+  - task: PublishBuildArtifacts@1
+    inputs:
+      PathtoPublish: 'enter_email_page.png'
+      ArtifactName: 'screenshots'
+      publishLocation: 'Container'
+    condition: succeededOrFailed()
+
+  - task: PublishBuildArtifacts@1
+    inputs:
+      PathtoPublish: 'next_button_clicked.png'
       ArtifactName: 'screenshots'
       publishLocation: 'Container'
     condition: succeededOrFailed()
