@@ -14,12 +14,12 @@ steps:
       python -m venv venv
       source venv/bin/activate
       pip install -r requirements.txt
-      python test-auto.py
+      python test_linkedin.py
     displayName: 'Run Selenium Test'
 
   - task: PublishBuildArtifacts@1
     inputs:
-      PathtoPublish: 'linkedin_homepage.png'
+      PathtoPublish: 'linkedin_homepage_full.png'
       ArtifactName: 'screenshots'
       publishLocation: 'Container'
     condition: succeededOrFailed()
