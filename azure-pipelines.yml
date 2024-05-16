@@ -1,28 +1,42 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
+import logging
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
+import time
 
-trigger:
-  - main
+# Configure logging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logger = logging.getLogger()
 
-pool:
-  vmImage: 'ubuntu-latest'
+# Setup Chrome options
+options = webdriver.ChromeOptions()
+options.add_argument('--headless')  # Run in headless mode for automation
 
-steps:
-  - task: UsePythonVersion@0
-    inputs:
-      versionSpec: '3.x'
-      addToPath: true
+try:
+    # Create a new Chrome session
+    logger.info("Starting Chrome browser")
+    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+    driver.implicitly_wait(10)
 
-  - script: |
-      dir # not necessary, will print all directories available
-      pwd # will show your current path, also good for debugging
-    displayName: 'Display current directory'
+    # Navigate to LinkedIn
+    logger.info("Navigating to LinkedIn")
+    driver.get("https://www.linkedin.com")
 
-  - script: |
-      python -m venv venv
-      source venv/bin/activate
-      pip install -r requirements.txt
-      python test-auto.py
-    displayName: 'Run Selenium Test'
+    # Wait for a few seconds to allow page to load
+    time.sleep(5)
+
+    # Verify page title
+    assert "LinkedIn" in driver.title
+    logger.info("LinkedIn page loaded successfully")
+
+    # Take a screenshot
+    driver.save_screenshot('linkedin_homepage.png')
+    logger.info("Screenshot taken")
+
+except Exception as e:
+    logger.error(f"An error occurred: {e}")
+
+finally:
+    # Close the browser
+    driver.quit()
+    logger.info("Closed Chrome browser")
