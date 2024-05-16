@@ -18,6 +18,10 @@ try:
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
     driver.implicitly_wait(10)
 
+    # Set window size to full screen
+    driver.set_window_size(1920, 1080)
+    logger.info("Set browser window to full screen")
+
     # Navigate to LinkedIn
     logger.info("Navigating to LinkedIn")
     driver.get("https://www.linkedin.com")
@@ -29,9 +33,9 @@ try:
     assert "LinkedIn" in driver.title
     logger.info("LinkedIn page loaded successfully")
 
-    # Take a screenshot
-    driver.save_screenshot('linkedin_homepage.png')
-    logger.info("Screenshot taken")
+    # Take a full-screen screenshot
+    driver.save_screenshot('linkedin_homepage_full.png')
+    logger.info("Full-screen screenshot taken")
 
 except Exception as e:
     logger.error(f"An error occurred: {e}")
