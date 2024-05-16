@@ -1,7 +1,3 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-
 trigger:
   - main
 
@@ -14,14 +10,16 @@ steps:
       versionSpec: '3.x'
       addToPath: true
 
-  -script: |
-      dir # not necessary, will print all directories available
-      pwd # will show your current path, also good for debugging
-    displayName: 'Changing directory...'
-
   - script: |
       python -m venv venv
       source venv/bin/activate
       pip install -r requirements.txt
       python test_linkedin.py
     displayName: 'Run Selenium Test'
+
+  - task: PublishBuildArtifacts@1
+    inputs:
+      PathtoPublish: 'linkedin_homepage.png'
+      ArtifactName: 'screenshots'
+      publishLocation: 'Container'
+    condition: succeededOrFailed()
