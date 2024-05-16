@@ -22,19 +22,19 @@ try:
     driver.set_window_size(1920, 1080)
     logger.info("Set browser window to full screen")
 
-    # Navigate to LinkedIn
-    logger.info("Navigating to LinkedIn")
-    driver.get("https://www.linkedin.com")
+    # Navigate to Login page
+    logger.info("Navigating to Login page")
+    driver.get("https://portail-oab.expleo.suez.com/mydashboard")
 
     # Wait for a few seconds to allow page to load
     time.sleep(5)
 
     # Verify page title
-    assert "LinkedIn" in driver.title
-    logger.info("LinkedIn page loaded successfully")
+    assert "Expleo" in driver.title
+    logger.info("Login page loaded successfully")
 
     # Take a full-screen screenshot
-    driver.save_screenshot('linkedin_homepage_full.png')
+    driver.save_screenshot('login_page.png')
     logger.info("Full-screen screenshot taken")
 
 except Exception as e:
