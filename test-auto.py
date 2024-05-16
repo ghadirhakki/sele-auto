@@ -2,6 +2,7 @@ import logging
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.common.by import By
 import time
 
 # Configure logging
@@ -44,7 +45,7 @@ try:
 
 
     # Find and fill email input field
-    email_input = driver.find_element_by_id("i0116")
+    email_input =driver.find_element(By.ID, "i0116")
     email_input.send_keys("expleo.admin@suezenv.onmicrosoft.com")
     logger.info("Entered email")
 
@@ -52,7 +53,7 @@ try:
     logger.info("entered email screenshot taken")
 
     # Find and click "Next" button
-    next_button = driver.find_element_by_id("idSIButton9")
+    next_button = driver.find_element(By.ID,"idSIButton9")
     next_button.click()
     logger.info("Clicked on 'Next' button")
 
