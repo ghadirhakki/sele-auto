@@ -63,6 +63,25 @@ try:
     time.sleep(15)
     driver.save_screenshot('next_button_clicked_page_shown.png')
     logger.info("Next page of next button clicked screenshot taken ")
+
+    # Find and fill pwd input field
+    email_input =driver.find_element(By.ID, "i0118")
+    email_input.send_keys("1@BSu3z!#")
+    logger.info("Entered pwd")
+
+    time.sleep(10)
+    driver.save_screenshot('enter_pwd_page.png')
+    logger.info("entered pwd screenshot taken")
+
+    # Find and click "Sign in" button
+    signIn_button = driver.find_element(By.ID,"idSIButton9")
+    signIn_button.click()
+    logger.info("Clicked on 'Sign in' button")
+
+
+    time.sleep(10)
+    driver.save_screenshot('signed_in_page.png')
+    logger.info("signed in screenshot taken")
     
 
 except Exception as e:
