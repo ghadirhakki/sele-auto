@@ -35,8 +35,8 @@ try:
     logger.info(f"Page title: {page_title}")
 
     # Verify page title
-    #assert "Expleo" in driver.title
-    #logger.info("Login page loaded successfully")
+    assert "Sign in to your account" in driver.title
+    logger.info("Login page loaded successfully")
 
     # Take a full-screen screenshot
     driver.save_screenshot('login_page.png')
