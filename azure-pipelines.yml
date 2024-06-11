@@ -12,7 +12,7 @@ parameters:
     - '7_pop_up_off.png'
     - '8_tours.png'
     - '9_menu_opened.png'
-    - '10_tableau_de_bord.png'
+    - '10_notifs.png'
 
 trigger:
   - main
