@@ -3,14 +3,15 @@ parameters:
   displayName: Screenshots
   type: object
   default:
-    - 'login_page.png'
-    - 'enter_email_page.png'
-    - 'next_button_clicked.png'
-    - 'next_button_clicked_page_shown.png'
-    - 'enter_pwd_page.png'
-    - 'signed_in_page.png'
-    - 'pop_up_off.png'
-    - 'menu_opened.png'
+    - '1_login_page.png'
+    - '2_enter_email_page.png'
+    - '3_next_button_clicked.png'
+    - '4_next_button_clicked_page_shown.png'
+    - '5_enter_pwd_page.png'
+    - '6_signed_in_page.png'
+    - '7_pop_up_off.png'
+    - '8_menu_opened.png'
+    - '9_sous_menu_tours.png'
 
 trigger:
   - main
