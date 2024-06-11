@@ -65,4 +65,10 @@ steps:
       ArtifactName: 'screenshots'
       publishLocation: 'Container'
     condition: succeededOrFailed()
-    
+
+  - task: PublishBuildArtifacts@1
+    inputs:
+      PathtoPublish: 'menu_opened.png'
+      ArtifactName: 'screenshots'
+      publishLocation: 'Container'
+    condition: succeededOrFailed()
