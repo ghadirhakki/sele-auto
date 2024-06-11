@@ -93,6 +93,18 @@ try:
     time.sleep(10)
     driver.save_screenshot('pop_up_off.png')
     logger.info("pop_up_off screenshot taken")
+
+
+    #open the left menu
+    menu = driver.find_element(By.CLASS_NAME, "menu.burger-menu.float-left")
+    menu.click()
+    logger.info("menu opened")
+
+
+    time.sleep(10)
+    driver.save_screenshot('menu_opened.png')
+    logger.info("menu opened screenshot")
+    
     
 
 except Exception as e:
