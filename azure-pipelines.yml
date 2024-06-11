@@ -26,7 +26,7 @@ steps:
       condition: succeededOrFailed()
 
 parameters:
-  screenshots:
+  - screenshots:
     - 'login_page.png'
     - 'enter_email_page.png'
     - 'next_button_clicked.png'
