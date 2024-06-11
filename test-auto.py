@@ -40,7 +40,7 @@ try:
     logger.info("Login page loaded successfully")
 
     # Take a full-screen screenshot
-    driver.save_screenshot('login_page.png')
+    driver.save_screenshot('1_login_page.png')
     logger.info("Full-screen screenshot taken")
 
 
@@ -49,7 +49,7 @@ try:
     email_input.send_keys("expleo.admin@suezenv.onmicrosoft.com")
     logger.info("Entered email")
 
-    driver.save_screenshot('enter_email_page.png')
+    driver.save_screenshot('2_enter_email_page.png')
     logger.info("entered email screenshot taken")
 
     # Find and click "Next" button
@@ -57,11 +57,11 @@ try:
     next_button.click()
     logger.info("Clicked on 'Next' button")
 
-    driver.save_screenshot('next_button_clicked.png')
+    driver.save_screenshot('3_next_button_clicked.png')
     logger.info("Next butotn clicked screenshot taken")
 
     time.sleep(15)
-    driver.save_screenshot('next_button_clicked_page_shown.png')
+    driver.save_screenshot('4_next_button_clicked_page_shown.png')
     logger.info("Next page of next button clicked screenshot taken ")
 
     # Find and fill pwd input field
@@ -70,7 +70,7 @@ try:
     logger.info("Entered pwd")
 
     time.sleep(10)
-    driver.save_screenshot('enter_pwd_page.png')
+    driver.save_screenshot('5_enter_pwd_page.png')
     logger.info("entered pwd screenshot taken")
 
     # Find and click "Sign in" button
@@ -80,7 +80,7 @@ try:
 
 
     time.sleep(10)
-    driver.save_screenshot('signed_in_page.png')
+    driver.save_screenshot('6_signed_in_page.png')
     logger.info("signed in screenshot taken")
 
 
@@ -91,7 +91,7 @@ try:
     logger.info("Clicked on 'OK' button")
 
     time.sleep(10)
-    driver.save_screenshot('pop_up_off.png')
+    driver.save_screenshot('7_pop_up_off.png')
     logger.info("pop_up_off screenshot taken")
 
 
@@ -102,8 +102,17 @@ try:
 
 
     time.sleep(10)
-    driver.save_screenshot('menu_opened.png')
+    driver.save_screenshot('8_menu_opened.png')
     logger.info("menu opened screenshot")
+
+    #click on mes tournées 
+    tours = driver.find_element(By.ID,"smTours")
+    tours.click
+    logger.info(mes tournées opened)
+
+    time.sleep(10)
+    driver.save_screenshot('9_sous_menu_tours.png')
+    logger.info("sous_menu_tours opened screenshot")
     
     
 
