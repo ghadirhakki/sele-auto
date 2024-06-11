@@ -116,23 +116,15 @@ try:
     driver.save_screenshot('9_menu_opened.png')
     logger.info("menu opened screenshot") 
 
-    #open dashboard
-    menu = driver.find_element(By.CLASS_NAME, "router-link-exact-active.router-link-active")
-    menu.click()
-    logger.info("menu opened")
+
+    #click on my notifs
+    notif = driver.find_element(By.CLASS_NAME,"bell")
+    notif.click
+    logger.info("notif clicked")
 
     time.sleep(10)
-    driver.save_screenshot('menu_opened.png')
-    logger.info("menu opened screenshot")
-
-    #click on my events
-    tours = driver.find_element(By.ID,"mMyevents")
-    tours.click
-    logger.info("myEvents clicked")
-
-    time.sleep(10)
-    driver.save_screenshot('10_events.png')
-    logger.info("events opened screenshot")
+    driver.save_screenshot('10_notifs.png')
+    logger.info("notifs opened screenshot")
 
 
 
