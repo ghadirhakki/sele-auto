@@ -17,58 +17,21 @@ steps:
       python test-auto.py
     displayName: 'Run Selenium Test'
 
-  - task: PublishBuildArtifacts@1
-    inputs:
-      PathtoPublish: 'login_page.png'
-      ArtifactName: 'screenshots'
-      publishLocation: 'Container'
-    condition: succeededOrFailed()
+  - ${{ each screenshot in parameters.screenshots }}:
+    - task: PublishBuildArtifacts@1
+      inputs:
+        PathtoPublish: ${{ screenshot }}
+        ArtifactName: 'screenshots'
+        publishLocation: 'Container'
+      condition: succeededOrFailed()
 
-  - task: PublishBuildArtifacts@1
-    inputs:
-      PathtoPublish: 'enter_email_page.png'
-      ArtifactName: 'screenshots'
-      publishLocation: 'Container'
-    condition: succeededOrFailed()
-
-  - task: PublishBuildArtifacts@1
-    inputs:
-      PathtoPublish: 'next_button_clicked.png'
-      ArtifactName: 'screenshots'
-      publishLocation: 'Container'
-    condition: succeededOrFailed()
-
-  - task: PublishBuildArtifacts@1
-    inputs:
-      PathtoPublish: 'next_button_clicked_page_shown.png'
-      ArtifactName: 'screenshots'
-      publishLocation: 'Container'
-    condition: succeededOrFailed()
-
-  - task: PublishBuildArtifacts@1
-    inputs:
-      PathtoPublish: 'enter_pwd_page.png'
-      ArtifactName: 'screenshots'
-      publishLocation: 'Container'
-    condition: succeededOrFailed()
-
-  - task: PublishBuildArtifacts@1
-    inputs:
-      PathtoPublish: 'signed_in_page.png'
-      ArtifactName: 'screenshots'
-      publishLocation: 'Container'
-    condition: succeededOrFailed()
-
-  - task: PublishBuildArtifacts@1
-    inputs:
-      PathtoPublish: 'pop_up_off.png'
-      ArtifactName: 'screenshots'
-      publishLocation: 'Container'
-    condition: succeededOrFailed()
-
-  - task: PublishBuildArtifacts@1
-    inputs:
-      PathtoPublish: 'menu_opened.png'
-      ArtifactName: 'screenshots'
-      publishLocation: 'Container'
-    condition: succeededOrFailed()
+parameters:
+  screenshots:
+    - 'login_page.png'
+    - 'enter_email_page.png'
+    - 'next_button_clicked.png'
+    - 'next_button_clicked_page_shown.png'
+    - 'enter_pwd_page.png'
+    - 'signed_in_page.png'
+    - 'pop_up_off.png'
+    - 'menu_opened.png'
