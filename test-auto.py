@@ -125,15 +125,14 @@ try:
     driver.save_screenshot('menu_opened.png')
     logger.info("menu opened screenshot")
 
-    #click on mon tableau de bord
-    tours = driver.find_element(By.CLASS_NAME,"router-link-exact-active.router-link-active")
+    #click on my events
+    tours = driver.find_element(By.ID,"mMyevents")
     tours.click
-    logger.info("tableau de bord affiché")
+    logger.info("myEvents clicked")
 
     time.sleep(10)
-    driver.save_screenshot('10_tableau_de_bord.png')
-    logger.info("tableau de bord opened screenshot")
-
+    driver.save_screenshot('10_events.png')
+    logger.info("events opened screenshot")
 
 
 
