@@ -117,7 +117,7 @@ try:
     logger.info("menu opened screenshot") 
 
     #open dashboard
-    menu = driver.find_element(By.CLASS_NAME, "menu.burger-menu.float-left")
+    menu = driver.find_element(By.CLASS_NAME, "router-link-exact-active.router-link-active")
     menu.click()
     logger.info("menu opened")
 
