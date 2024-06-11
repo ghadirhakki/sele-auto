@@ -83,6 +83,7 @@ try:
     driver.save_screenshot('6_signed_in_page.png')
     logger.info("signed in screenshot taken")
 
+    logger.info("Accès au portail => O.K ")
 
     #pop up avant de continuer 
     # Find and click "OK" button by class name
@@ -92,28 +93,21 @@ try:
 
     time.sleep(10)
     driver.save_screenshot('7_pop_up_off.png')
-    logger.info("pop_up_off screenshot taken")
+    logger.info("pop_up_off screenshot taken ")
+
+    logger.info("Consultation tableau de bord => O.K ")
 
 
-    #open the left menu
-    menu = driver.find_element(By.CLASS_NAME, "menu.burger-menu.float-left")
-    menu.click()
-    logger.info("menu opened")
-
+    #Consultation de l'ensemble des tournées
+    tours = driver.find_element(By.CLASS_NAME, "flex.total-tours")
+    tours.click()
+    logger.info("Clicked on tours")
 
     time.sleep(10)
-    driver.save_screenshot('8_menu_opened.png')
-    logger.info("menu opened screenshot")
+    driver.save_screenshot('8_tours.png')
+    logger.info("tours dashboard screenshot taken ")
 
-    #click on mes tournées 
-    tours = driver.find_element(By.XPATH, "/html/body/div/div[2]/div/div/div[1]/div/ul/li[1]") 
-    tours.click
-    logger.info("sous_menu_tours opened")
 
-    time.sleep(30)
-    driver.save_screenshot('9_sous_menu_tours.png')
-    logger.info("sous_menu_tours opened screenshot")
-    
     
 
 except Exception as e:
