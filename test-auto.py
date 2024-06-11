@@ -108,7 +108,7 @@ try:
     #click on mes tournées 
     tours = driver.find_element(By.ID,"smTours")
     tours.click
-    logger.info(mes tournées opened)
+    logger.info("sous_menu_tours opened")
 
     time.sleep(10)
     driver.save_screenshot('9_sous_menu_tours.png')
