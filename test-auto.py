@@ -106,7 +106,7 @@ try:
     logger.info("menu opened screenshot")
 
     #click on mes tournées 
-    tours = driver.find_element(By.XPATH, /html/body/div/div[2]/div/div/div[1]/div/ul/li[1]) 
+    tours = driver.find_element(By.XPATH, "/html/body/div/div[2]/div/div/div[1]/div/ul/li[1]") 
     tours.click
     logger.info("sous_menu_tours opened")
 
