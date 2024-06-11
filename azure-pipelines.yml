@@ -11,6 +11,8 @@ parameters:
     - '6_signed_in_page.png'
     - '7_pop_up_off.png'
     - '8_tours.png'
+    - '9_menu_opened.png'
+    - '10_tableau_de_bord.png'
 
 trigger:
   - main
