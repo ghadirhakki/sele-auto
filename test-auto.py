@@ -105,7 +105,41 @@ try:
 
     time.sleep(10)
     driver.save_screenshot('8_tours.png')
-    logger.info("tours dashboard screenshot taken ")
+    logger.info("tours dashboard screenshot taken ") 
+
+
+    #open the left menu
+    menu = driver.find_element(By.CLASS_NAME, "menu.burger-menu.float-left")
+    menu.click()
+    logger.info("menu opened")
+
+
+    time.sleep(10)
+    driver.save_screenshot('9_menu_opened.png')
+    logger.info("menu opened screenshot") 
+
+
+    #open dashboard
+    menu = driver.find_element(By.CLASS_NAME, "menu.burger-menu.float-left")
+    menu.click()
+    logger.info("menu opened")
+
+
+    time.sleep(10)
+    driver.save_screenshot('menu_opened.png')
+    logger.info("menu opened screenshot")
+
+
+    #click on mon tableau de bord
+    tours = driver.find_element(By.CLASS_NAME,"router-link-exact-active.router-link-active")
+    tours.click
+    logger.info(tableau de bord affiché)
+
+    time.sleep(10)
+    driver.save_screenshot('10_tableau_de_bord.png')
+    logger.info("tableau de bord opened screenshot")
+
+
 
 
     
