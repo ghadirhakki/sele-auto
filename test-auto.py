@@ -106,7 +106,7 @@ try:
     logger.info("menu opened screenshot")
 
     #click on mes tournées 
-    tours = driver.find_element(By.ID,"smTours")
+    tours = driver.find_element(By.ID,"smTours.sous-menu")
     tours.click
     logger.info("sous_menu_tours opened")
 
